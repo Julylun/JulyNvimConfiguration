@@ -36,7 +36,7 @@ M.colors = {
 local function loadNoClownFiesta()
     vim.cmd [[colorscheme no-clown-fiesta]]
     require("no-clown-fiesta").setup({
-        transparent = false, -- Enable this to disable the bg color
+        transparent = true, -- Enable this to disable the bg color
         styles = {
             -- You can set any of the style values specified for `:h nvim_set_hl`
             comments = {},
@@ -64,7 +64,7 @@ local themes = {
                     diagnostics = "underline"
                 },
                 disable = {
-                    background = false,
+                    background = true,
                     cursorline = false,
                     eob_lines = true
                 },
@@ -77,11 +77,12 @@ local themes = {
         config = function()
             local theme = require('tokyonight')
             theme.setup({
+                transparent = true,
                 style = 'night',
                 on_colors = function(colors)
-                    colors.bg_dark = '#000000'
+                    colors.bg_dark = '#11121D'
                     colors.bg = '#11121D'
-                    -- colors.bg_visual = M.colors.grey12
+                    --colors.bg_visual = M.colors.grey12
                 end
             })
             theme.load()
@@ -93,7 +94,7 @@ local themes = {
             local theme = require('onedark')
             theme.setup {
                 style = 'deep',
-                transparent = false, -- Show/hide background
+                transparent = true, -- Show/hide background
                 code_style = {
                     comments = 'italic',
                     keywords = 'none',
